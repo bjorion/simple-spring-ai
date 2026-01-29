@@ -1,12 +1,13 @@
 # Spring AI in Action
 
-POC for using Spring AI
+POC for using Spring AI. Based on the book [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action) (Manning)
 
 ## External Links
 
 - OpenAI: https://platform.openai.com/settings
 - Code Source: https://github.com/habuma/spring-ai-in-action-samples
 - Reference: https://docs.spring.io/spring-ai/reference/
+- Zalando logbook: https://github.com/zalando/logbook
 
 ## Internal Links
 

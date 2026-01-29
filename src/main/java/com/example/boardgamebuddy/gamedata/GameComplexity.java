@@ -1,0 +1,21 @@
+package com.example.boardgamebuddy.gamedata;
+
+import lombok.Getter;
+
+@Getter
+public enum GameComplexity {
+
+    UNKNOWN(0),
+    EASY(1),
+    MODERATELY_EASY(2),
+    MODERATE(3),
+    MODERATELY_DIFFICULT(4),
+    DIFFICULT(5);
+
+    private final int value;
+
+    GameComplexity(int value) {
+        this.value = value;
+    }
+
+}

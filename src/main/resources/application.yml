@@ -1,0 +1,49 @@
+
+server:
+  servlet:
+    application-display-name: BoardGameBuddy
+
+spring:
+  application:
+    name: board-game-buddy
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: "gpt-4o-mini"
+          max-tokens: 4096
+      vectorstore:
+        qdrant:
+          initialize-schema: true
+          collection-name: board-game-buddy
+
+springdoc:
+  swagger-ui:
+    displayOperationId: true
+    disable-swagger-default-url: true
+    path: /api/swagger-ui
+    operations-sorter: alpha
+    tags-sorter: alpha
+  packages-to-scan: com.example.boardgamebuddy
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      show-values: always
+    health:
+      show-details: always
+
+otlp.tracing.url: "http://localhost:4317"
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+
+logbook:
+  format:
+    style: http
