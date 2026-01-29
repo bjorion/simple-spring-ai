@@ -45,6 +45,7 @@ public class AiConfig {
         return restClient -> restClient.requestInterceptor(interceptor);
     }
 
+    @SuppressWarnings("unused")
     @Description("Returns a game's complexity/difficulty given the game's title/name.")
     Function<GameComplexityRequest, GameComplexityResponse> gameComplexityFunction(
             GameRepository gameRepository) {

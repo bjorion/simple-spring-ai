@@ -1,6 +1,5 @@
 package com.example.boardgamebuddy;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;
