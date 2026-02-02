@@ -36,14 +36,23 @@ public class SpringAiBoardGameService implements BoardGameService {
         var gameNameMatch = buildGameNameMatch(question.gameTitle());
 
         var answerText = chatClient.prompt()
-                .user(question.question())
+                .user(userSpec -> userSpec
+                        .text(question.question())
+                        // send a media
+                        // .media(mimeType, resource)
+                )
                 .system(systemSpec -> systemSpec
                         .text(promptTemplate)
-                        .param("gameTitle", question.gameTitle()))
+                        .param("gameTitle", question.gameTitle())
+                )
                 .advisors(advisorSpec -> advisorSpec
                         .param(FILTER_EXPRESSION, gameNameMatch)
-                        .param(CONVERSATION_ID, conversationId))
+                        .param(CONVERSATION_ID, conversationId)
+                )
+                // blocking calls
                 .call()
+                // alt: chatResponse()
+                // alt: entity(record)
                 .content();
 
         var answer = new Answer(question.gameTitle(), answerText);

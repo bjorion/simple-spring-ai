@@ -32,6 +32,7 @@ public class AiConfig {
 
         return chatClientBuilder
                 .defaultAdvisors(
+                        // MessageChatMemoryAdvisor.builder(chatMemory).build()
                         safeGuardAdvisor
                 )
                 .defaultOptions(chatOptions)
