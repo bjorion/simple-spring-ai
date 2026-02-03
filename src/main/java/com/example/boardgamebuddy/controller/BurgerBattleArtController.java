@@ -1,5 +1,8 @@
-package com.example.boardgamebuddy;
+package com.example.boardgamebuddy.controller;
 
+import com.example.boardgamebuddy.model.Question;
+import com.example.boardgamebuddy.service.BoardGameService;
+import com.example.boardgamebuddy.service.ImageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,5 +1,10 @@
-package com.example.boardgamebuddy;
+package com.example.boardgamebuddy.controller;
 
+import com.example.boardgamebuddy.model.Answer;
+import com.example.boardgamebuddy.model.Question;
+import com.example.boardgamebuddy.model.Translation;
+import com.example.boardgamebuddy.service.BoardGameService;
+import com.example.boardgamebuddy.service.VoiceService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.*;

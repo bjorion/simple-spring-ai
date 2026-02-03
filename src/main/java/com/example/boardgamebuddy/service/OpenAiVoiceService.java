@@ -1,4 +1,4 @@
-package com.example.boardgamebuddy;
+package com.example.boardgamebuddy.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.openai.OpenAiAudioTranscriptionModel;

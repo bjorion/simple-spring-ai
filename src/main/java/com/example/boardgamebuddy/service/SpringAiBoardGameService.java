@@ -1,5 +1,8 @@
-package com.example.boardgamebuddy;
+package com.example.boardgamebuddy.service;
 
+import com.example.boardgamebuddy.model.Answer;
+import com.example.boardgamebuddy.model.Question;
+import com.example.boardgamebuddy.model.Translation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.beans.factory.annotation.Value;

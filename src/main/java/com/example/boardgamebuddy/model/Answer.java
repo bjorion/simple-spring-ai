@@ -1,4 +1,4 @@
-package com.example.boardgamebuddy;
+package com.example.boardgamebuddy.model;
 
 public record Answer(String gameTitle, String answer) {
 }
