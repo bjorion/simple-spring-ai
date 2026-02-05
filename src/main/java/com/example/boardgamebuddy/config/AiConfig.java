@@ -4,6 +4,7 @@ import com.example.boardgamebuddy.gamedata.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SafeGuardAdvisor;
+import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
 import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.boot.web.client.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +24,7 @@ public class AiConfig {
 
         var safeGuardAdvisor = SafeGuardAdvisor.builder()
                 .sensitiveWords(List.of("Uno", "uno", "UNO"))
-                .failureResponse("{ \"answer\": \"Sorry, this subject is taboo\"}")
+                .failureResponse("Sorry, this subject is taboo")
                 .build();
 
         var chatOptions = ChatOptions.builder()
@@ -33,7 +34,8 @@ public class AiConfig {
         return chatClientBuilder
                 .defaultAdvisors(
                         // MessageChatMemoryAdvisor.builder(chatMemory).build()
-                        safeGuardAdvisor
+                        safeGuardAdvisor,
+                        new SimpleLoggerAdvisor()
                 )
                 .defaultOptions(chatOptions)
                 // .defaultToolNames("gameComplexityFunction")

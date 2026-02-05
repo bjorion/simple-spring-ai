@@ -42,7 +42,8 @@ otlp.tracing.url: "http://localhost:4317"
 
 logging:
   level:
-    org.zalando.logbook: TRACE
+    org.zalando.logbook: INFO
+    org.springframework.ai: DEBUG
 
 logbook:
   format:
